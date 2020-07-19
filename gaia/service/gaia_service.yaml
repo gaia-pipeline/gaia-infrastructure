@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  namespace: cronohub
+  name: gaia-svc
+  labels:
+    app: gaia-svc
+    app.kubernetes.io/name: gaia-svc
+    app.kubernetes.io/instance: gaia-svc
+spec:
+  selector:
+    app: gaia-app
+    app.kubernetes.io/name: gaia-app
+    app.kubernetes.io/instance: gaia-app
+  ports:
+  - name: http
+    port: 8080
+    targetPort: gaia-http

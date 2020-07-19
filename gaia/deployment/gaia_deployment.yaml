@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: cronohub
+  name: gaia-app
+  labels:
+    app: gaia-app
+  annotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/port:   '9090'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gaia-app
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port:   '9090'
+      labels:
+        app: gaia-app
+        app.kubernetes.io/name: gaia-app
+        app.kubernetes.io/instance: gaia-app
+    spec:
+      containers:
+      - name: gaia
+        image: gaiapipeline/gaia:v0.2.4
+        ports:
+        - containerPort: 8080
+          name: gaia-http
+        volumeMounts:
+        - mountPath: /data
+          name: gaia-data
+          readOnly: false
+      volumes:
+        - name: gaia-data
+          persistentVolumeClaim:
+            claimName: do-storage-gaia
