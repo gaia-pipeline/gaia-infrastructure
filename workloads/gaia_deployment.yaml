@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -7,7 +8,7 @@ metadata:
     app: gaia-app
   annotations:
     prometheus.io/scrape: 'true'
-    prometheus.io/port:   '9090'
+    prometheus.io/port: '9090'
 spec:
   replicas: 1
   selector:
@@ -17,7 +18,7 @@ spec:
     metadata:
       annotations:
         prometheus.io/scrape: 'true'
-        prometheus.io/port:   '9090'
+        prometheus.io/port: '9090'
       labels:
         app: gaia-app
         app.kubernetes.io/name: gaia-app
@@ -34,6 +35,6 @@ spec:
           name: gaia-data
           readOnly: false
       volumes:
-        - name: gaia-data
-          persistentVolumeClaim:
-            claimName: do-storage-gaia
+      - name: gaia-data
+        persistentVolumeClaim:
+          claimName: do-storage-gaia
