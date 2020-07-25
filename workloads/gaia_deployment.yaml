@@ -34,6 +34,8 @@ spec:
         - mountPath: /data
           name: gaia-data
           readOnly: false
+        args:
+          - --hostname="https://gaia.cronohub.org"
       volumes:
       - name: gaia-data
         persistentVolumeClaim:
