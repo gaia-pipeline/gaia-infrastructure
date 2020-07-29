@@ -1,0 +1,1 @@
+{"jobID":"d4d9ae38-d0f1-cab6-b441-fa7400f9e681","spec":{"type":"policy","cause":{"Message":"","User":"Gergely Brautigam \u003cgergely@arangodb.com\u003e"},"spec":{"cronohub:deployment/gaia-app":{"add":{"automated":"true"},"remove":{}}}},"result":null}
