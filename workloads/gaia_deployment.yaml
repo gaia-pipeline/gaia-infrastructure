@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: gaia
-        image: gaiapipeline/gaia:v0.2.5
+        image: gaiapipeline/testing:rbac-fixes-281
         ports:
         - containerPort: 8080
           name: gaia-http
