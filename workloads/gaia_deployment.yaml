@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: gaia
-        image: gaiapipeline/testing:0ba963a02bb396eb9548f95772372b663a4ed627c1d6d26b80706f8b8b529a88
+        image: gaiapipeline/testing:e460cb583c140d42d577646163ab4556270a14d1b6f633e1e761cadc003ffa28
         ports:
         - containerPort: 8080
           name: gaia-http
