@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: gaia
-        image: gaiapipeline/testing:fix_global_hook_secret-283
+        image: gaiapipeline/testing:aaf56a509637c6ab24100cb82604e30fac1afe0506a0f305947df1b35e3113e7
         ports:
         - containerPort: 8080
           name: gaia-http
