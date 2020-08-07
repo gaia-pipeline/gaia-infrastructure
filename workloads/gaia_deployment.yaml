@@ -36,7 +36,7 @@ spec:
           name: gaia-data
           readOnly: false
         args:
-        - -hostname="https://gaia.cronohub.org"
+          - -hostname="https://gaia.cronohub.org"
       volumes:
       - name: gaia-data
         persistentVolumeClaim:
