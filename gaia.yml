@@ -1,0 +1,32 @@
+version: '3.3'
+
+services:
+  gaia:
+    image: gaiapipeline/gaia:v0.2.6
+    networks:
+      - traefik-public
+      - default
+    volumes:
+        - /gaia:/data
+    command:
+      - --hostname="https://gaia.cronohub.org"
+    deploy:
+      labels:
+        - "traefik.backend=gaia"
+        - "traefik.constraint-label=traefik-public"
+        - "traefik.docker.network=traefik-public"
+        - "traefik.enable=true"
+        - "traefik.http.routers.gaia-http.rule=Host(`gaia.cronohub.org`)"
+        - "traefik.http.routers.gaia-http.entrypoints=http"
+        - "traefik.http.routers.gaia-http.middlewares=https-redirect"
+        - "traefik.http.routers.gaia-https.rule=Host(`gaia.cronohub.org`)"
+        - "traefik.http.routers.gaia-https.entrypoints=https"
+        - "traefik.http.routers.gaia-https.tls=true"
+        - "traefik.http.routers.gaia-https.tls.certresolver=le"
+        - "traefik.http.services.gaia.loadbalancer.server.port=8080"
+    ports:
+      - 8080:8080
+
+networks:
+  traefik-public:
+    external: true

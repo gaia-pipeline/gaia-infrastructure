@@ -29,3 +29,8 @@ helm install nfs-server stable/nfs-server-provisioner --set persistence.enabled=
 ```
 
 Then use the above persistent volume claim.
+
+# New
+
+The new deployment is on a single machine on Hetzner using Docker + Traefik. This deployment here represents that setting.
+I'm no longer using Kubernetes.
