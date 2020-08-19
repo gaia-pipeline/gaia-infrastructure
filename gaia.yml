@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   gaia:
-    image: gaiapipeline/testing:b06c071188714d399c5c73d9928a49a742a547ae1cf073a9e8d40f5800c5c81e
+    image: gaiapipeline/testing:fe70e439c0301537aec04165896fb66af547324864d1e14015ed35bcc5612f27
     networks:
       - traefik-public
       - default
